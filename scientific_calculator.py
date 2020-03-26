@@ -13,7 +13,7 @@ calc = Frame(root)
 calc.grid()
 
 
-# ======================Menu and Functions=========================
+# ======================Menu Functions=========================
 
 def iExit():
     iExit = tkinter.messagebox.askyesno("Scientific Calculator", "Confirm if you want to exit")
@@ -231,13 +231,13 @@ class Calc():
 
 added_value = Calc()
 
-# ========================== Entrybox ============================
+# ======================================================
 
 txtDisplay = Entry(calc, font=('arial', 20, 'bold'), background="powder blue", bd=30, width=28, justify=RIGHT)
 txtDisplay.grid(row=0, column=0, columnspan=4, pady=1)
 txtDisplay.insert(0, "0")
 
-# ========================= NumberPad ============================
+# ====================================================
 
 numberpad = "789456123"
 i = 0
@@ -250,8 +250,6 @@ for j in range(2, 5):
         i += 1
 
 # ======================== Standard ==============================
-
-# ======================== Row[1] ================================
 
 btnClear = Button(calc, text=chr(67), width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                   command=added_value.Clear_Entry).grid(row=1, column=0, pady=1)
@@ -266,8 +264,6 @@ btnSq = Button(calc, text="√", width=6, height=2, font=('arial', 20, 'bold'), 
 btnAdd = Button(calc, text="+", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                 command=lambda: added_value.operation("add")).grid(row=1, column=3, pady=1)
 
-# ======================== Row[2,3,4] =================================
-
 btnSub = Button(calc, text="-", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                 command=lambda: added_value.operation("sub")).grid(row=2, column=3, pady=1)
 
@@ -276,8 +272,6 @@ btnMult = Button(calc, text="*", width=6, height=2, font=('arial', 20, 'bold'), 
 
 btnDiv = Button(calc, text=chr(247), width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                 command=lambda: added_value.operation("divide")).grid(row=4, column=3, pady=1)
-
-# ======================== Row[5] =================================
 
 btnZero = Button(calc, text="0", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                  command=lambda: added_value.numberEnter(0)).grid(row=5, column=0, pady=1)
@@ -295,7 +289,6 @@ btnEquals = Button(calc, text="=", width=6, height=2, font=('arial', 20, 'bold')
 lblDisplay = Label(calc, text="Scientific Calculator", bd=30, font=('arial', 30, 'bold'), justify=CENTER)
 lblDisplay.grid(row=0, column=4, columnspan=4)
 
-# ======================== Row[1] ==================================
 btnPi = Button(calc, text="π", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                command=added_value.pi).grid(row=1, column=4, pady=1)
 
@@ -308,8 +301,6 @@ btntan = Button(calc, text="tan", width=6, height=2, font=('arial', 20, 'bold'),
 btnsin = Button(calc, text="sin", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                 command=added_value.sin).grid(row=1, column=7, pady=1)
 
-# ======================== Row[2] ==================================
-
 btn2Pi = Button(calc, text="2π", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                 command=added_value.tau).grid(row=2, column=4, pady=1)
 
@@ -321,8 +312,6 @@ btntanh = Button(calc, text="tanh", width=6, height=2, font=('arial', 20, 'bold'
 
 btnsinh = Button(calc, text="sinh", width=6, height=2, font=('arial', 20, 'bold'), bd=4, command=added_value.sinh).grid(
     row=2, column=7, pady=1)
-
-# ======================== Row[3] ==================================
 
 btnlog = Button(calc, text="log", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                 command=added_value.log).grid(row=3, column=4, pady=1)
@@ -337,8 +326,6 @@ btnE = Button(calc, text="e", width=6, height=2, font=('arial', 20, 'bold'), bd=
                                                                                                                column=7,
                                                                                                                pady=1)
 
-# ======================== Row[4] ==================================
-
 btnlog2 = Button(calc, text="log2", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                  command=added_value.log2).grid(row=4, column=4, pady=1)
 
@@ -350,8 +337,6 @@ btnacosh = Button(calc, text="acosh", width=6, height=2, font=('arial', 20, 'bol
 
 btnasinh = Button(calc, text="asinh", width=6, height=2, font=('arial', 20, 'bold'), bd=4,
                   command=added_value.asinh).grid(row=4, column=7, pady=1)
-
-# ======================== Row[5] ==================================
 
 btnlog10 = Button(calc, text="log10", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                   command=added_value.log10).grid(row=5, column=4, pady=1)
