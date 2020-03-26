@@ -21,6 +21,9 @@ def iExit():
         root.destroy()
         return
 
+def Standard():
+    root.resizable(width=False, height=False)
+    root.geometry("480x568")
 
 def Scientific():
     root.resizable(width=False, height=False)
