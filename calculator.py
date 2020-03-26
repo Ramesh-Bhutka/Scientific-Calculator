@@ -27,18 +27,6 @@ def Scientific():
     root.geometry("950x568")
 
 
-def Standard():
-    root.resizable(width=False, height=False)
-    root.geometry("480x568")
-
-
-def unit():
-    root.resizable(width=False, height=False)
-    root.geometry("1317x568")
-
-
-
-
 menubar = Menu(calc)
 
 filemenu = Menu(menubar, tearoff=0)
