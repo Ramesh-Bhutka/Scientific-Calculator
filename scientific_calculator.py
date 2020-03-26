@@ -12,7 +12,6 @@ root.geometry("480x568")
 calc = Frame(root)
 calc.grid()
 
-
 # ======================Menu Functions=========================
 
 def iExit():
@@ -21,16 +20,13 @@ def iExit():
         root.destroy()
         return
 
-
 def Scientific():
     root.resizable(width=False, height=False)
     root.geometry("950x568")
 
-
 def Standard():
     root.resizable(width=False, height=False)
     root.geometry("480x568")
-
 
 menubar = Menu(calc)
 
@@ -40,9 +36,7 @@ filemenu.add_command(label="Standard", command=Standard)
 filemenu.add_separator()
 filemenu.add_command(label="Scientific", command=Scientific)
 
-
 menubar.add_command(label="Exit", command=iExit)
-
 
 # ============================= Functions ==========================
 
@@ -132,12 +126,7 @@ class Calc():
         self.result = False
         self.current = math.pi
         self.display(self.current)
-
-    def cos(self):
-        self.result = False
-        self.current = math.cos(math.radians(float(txtDisplay.get())))
-        self.display(self.current)
-
+       
     def sin(self):
         self.result = False
         self.current = math.sin(math.radians(float(txtDisplay.get())))
@@ -146,6 +135,11 @@ class Calc():
     def sinh(self):
         self.result = False
         self.current = math.sinh(math.radians(float(txtDisplay.get())))
+        self.display(self.current)
+
+    def cos(self):
+        self.result = False
+        self.current = math.cos(math.radians(float(txtDisplay.get())))
         self.display(self.current)
 
     def cosh(self):
@@ -168,15 +162,15 @@ class Calc():
         self.current = math.tau
         self.display(self.current)
 
-    def acosh(self):
-        self.result = False
-        self.current = math.acosh(math.radians(float(txtDisplay.get())))
-        self.display(self.current)
-
     def asinh(self):
         self.result = False
         self.current = math.asinh(math.radians(float(txtDisplay.get())))
         self.display(self.current)
+        
+    def acosh(self):
+        self.result = False
+        self.current = math.acosh(math.radians(float(txtDisplay.get())))
+        self.display(self.current)    
 
     def expm1(self):
         self.result = False
@@ -237,7 +231,7 @@ txtDisplay = Entry(calc, font=('arial', 20, 'bold'), background="powder blue", b
 txtDisplay.grid(row=0, column=0, columnspan=4, pady=1)
 txtDisplay.insert(0, "0")
 
-# ====================================================
+# ======================================================
 
 numberpad = "789456123"
 i = 0
@@ -286,6 +280,7 @@ btnEquals = Button(calc, text="=", width=6, height=2, font=('arial', 20, 'bold')
                    command=added_value.sum_of_total).grid(row=5, column=3, pady=1)
 
 # ======================== Scientific =============================
+
 lblDisplay = Label(calc, text="Scientific Calculator", bd=30, font=('arial', 30, 'bold'), justify=CENTER)
 lblDisplay.grid(row=0, column=4, columnspan=4)
 
@@ -322,9 +317,8 @@ btnExp = Button(calc, text="Exp", width=6, height=2, font=('arial', 20, 'bold'),
 btnMod = Button(calc, text="Mod", width=6, height=2, font=('arial', 20, 'bold'), bd=4,
                 command=lambda: added_value.operation("mod")).grid(row=3, column=6, pady=1)
 
-btnE = Button(calc, text="e", width=6, height=2, font=('arial', 20, 'bold'), bd=4, command=added_value.e).grid(row=3,
-                                                                                                               column=7,
-                                                                                                               pady=1)
+btnE = Button(calc, text="e", width=6, height=2, font=('arial', 20, 'bold'), bd=4, command=added_value.e
+             ).grid(row=3,column=7,pady=1)
 
 btnlog2 = Button(calc, text="log2", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="powder blue",
                  command=added_value.log2).grid(row=4, column=4, pady=1)
